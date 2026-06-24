@@ -10,8 +10,19 @@
 
 <body>
 
+    <header class="site-header">
+        <h1>Stars & Stripes Canvas</h1>
+
+        <nav class="site-nav" aria-label="Storybook navigation">
+            <a href="#car-page">Arrival</a>
+            <a href="#bbq-page">Backyard BBQ</a>
+            <a href="#games-page">Games & Finale</a>
+        </nav>
+    </header>
+
     <main>
 
+        <!-- PAGE 1: ARRIVAL SCENE -->
         <section id="car-page" class="page car-scene">
             <h2>Guests Arrive at the BBQ</h2>
 
@@ -61,9 +72,27 @@
                 </div>
             </div>
 
+            <section class="content-cards">
+                <article class="content-card">
+                    <h3>Arrival Scene</h3>
+                    <p>Guests arrive in a moving car before joining the backyard celebration.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>Animated Details</h3>
+                    <p>The car, clouds, balloons, tree, and sign use CSS animation.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>Patriotic Setup</h3>
+                    <p>The red, white, blue, and gold theme introduces the 4th of July mood.</p>
+                </article>
+            </section>
+
             <a class="next-button" href="#bbq-page">Next: Join the BBQ</a>
         </section>
 
+        <!-- PAGE 2: BACKYARD BBQ SCENE -->
         <section id="bbq-page" class="page bbq-scene">
 
             <h2>Backyard BBQ Celebration</h2>
@@ -134,6 +163,7 @@
 
                 <div class="dog">
                     <div class="tail"></div>
+                    <div class="dog-bandana"></div>
                 </div>
 
                 <div class="fireflies">
@@ -146,11 +176,145 @@
 
             </div>
 
+            <section class="content-cards">
+                <article class="content-card">
+                    <h3>Grill Smoke</h3>
+                    <p>The smoke rises from the grill while flames flicker below the food.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>Cookout Food</h3>
+                    <p>Burgers, hotdogs, and drinks make the scene feel like a real BBQ.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>Family and Pets</h3>
+                    <p>People, a dog, flags, and fireflies create a lively backyard setting.</p>
+                </article>
+            </section>
+
             <a class="next-button" href="#car-page">Back to Arrival Scene</a>
+            <a class="next-button" href="#games-page">Next: Games & Finale</a>
+
+        </section>
+
+        <!-- PAGE 3: GAMES AND FIREFLY FINALE -->
+        <section id="games-page" class="page bbq-scene games-scene">
+
+            <h2>Backyard Games and Firefly Finale</h2>
+
+            <p>
+                The celebration continues with lawn games, a sprinkler, chairs,
+                sparklers, fireflies, and a patriotic backyard finale.
+            </p>
+
+            <div class="bbq-yard games-yard">
+
+                <div class="sun"></div>
+
+                <div class="cloud cloud-one"></div>
+                <div class="cloud cloud-two"></div>
+
+                <div class="flag-string">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="fence"></div>
+
+                <div class="cornhole-board">
+                    <div class="cornhole-hole"></div>
+                    <div class="beanbag beanbag-one"></div>
+                    <div class="beanbag beanbag-two"></div>
+                </div>
+
+                <div class="horseshoe-game">
+                    <div class="stake"></div>
+                    <div class="horseshoe horseshoe-one"></div>
+                    <div class="horseshoe horseshoe-two"></div>
+                </div>
+
+                <div class="sprinkler">
+                    <div class="sprinkler-base"></div>
+                    <div class="water-stream water-one"></div>
+                    <div class="water-stream water-two"></div>
+                    <div class="water-stream water-three"></div>
+                </div>
+
+                <div class="lawn-chair chair-one"></div>
+                <div class="lawn-chair chair-two"></div>
+
+                <div class="sparkler sparkler-one"></div>
+                <div class="sparkler sparkler-two"></div>
+
+                <div class="small-firework firework-one"></div>
+                <div class="small-firework firework-two"></div>
+
+                <div class="stick-person person-one">
+                    <div class="head"></div>
+                    <div class="torso"></div>
+                    <div class="arm left-arm"></div>
+                    <div class="arm right-arm"></div>
+                    <div class="leg left-leg"></div>
+                    <div class="leg right-leg"></div>
+                </div>
+
+                <div class="stick-person person-two">
+                    <div class="head"></div>
+                    <div class="torso"></div>
+                    <div class="arm left-arm"></div>
+                    <div class="arm right-arm"></div>
+                    <div class="leg left-leg"></div>
+                    <div class="leg right-leg"></div>
+                </div>
+
+                <div class="dog">
+                    <div class="tail"></div>
+                    <div class="dog-bandana"></div>
+                </div>
+
+                <div class="fireflies">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+            </div>
+
+            <section class="content-cards">
+                <article class="content-card">
+                    <h3>Lawn Games</h3>
+                    <p>Cornhole and horseshoes add more activity to the backyard scene.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>Sprinkler Fun</h3>
+                    <p>The sprinkler adds motion and shows kids playing in the summer yard.</p>
+                </article>
+
+                <article class="content-card">
+                    <h3>Firefly Finale</h3>
+                    <p>Fireflies, sparklers, and small fireworks give the story a final celebration.</p>
+                </article>
+            </section>
+
+            <a class="next-button" href="#bbq-page">Back to BBQ Scene</a>
+            <a class="next-button" href="#car-page">Back to Start</a>
 
         </section>
 
     </main>
+
+    <footer class="site-footer">
+        <p>Stars & Stripes Canvas: Backyard BBQ Celebration</p>
+        <p>Created by Jamison Braxton and Nour Khoulani, and Marcus Santiago</p>
+        <p>"Freedom shines brightest when family and community celebrate together."</p>
+    </footer>
 
 </body>
 
