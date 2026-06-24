@@ -23,6 +23,127 @@ body {
     padding: 2rem;
 }
 
+/* HEADER */
+
+.site-header {
+    max-width: 1100px;
+    margin: 0 auto 1.5rem;
+    background: var(--patriot-blue);
+    color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.site-nav {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+}
+
+.site-nav a {
+    color: white;
+    background: var(--liberty-red);
+    text-decoration: none;
+    padding: .7rem 1rem;
+    border-radius: 999px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+    background: var(--star-gold);
+    color: var(--patriot-blue);
+    outline: 3px solid white;
+    transform: translateY(-3px);
+}
+
+/* CSS-ONLY PAGE NAVIGATION */
+
+.page {
+    display: none;
+}
+
+#car-page {
+    display: block;
+}
+
+.page:target {
+    display: block;
+}
+
+body:has(#bbq-page:target) #car-page,
+body:has(#games-page:target) #car-page {
+    display: none;
+}
+
+.next-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    margin-right: .75rem;
+    background: var(--liberty-red);
+    color: white;
+    text-decoration: none;
+    padding: .9rem 1.3rem;
+    border-radius: 10px;
+    font-weight: bold;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .18);
+    transition: .3s;
+}
+
+.next-button:hover,
+.next-button:focus {
+    background: var(--patriot-blue);
+    transform: translateY(-4px);
+    outline: 3px solid var(--star-gold);
+}
+
+/* CONTENT CARDS */
+
+.content-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.content-card {
+    background: var(--parchment);
+    border: 3px solid var(--patriot-blue);
+    border-radius: 14px;
+    padding: 1rem;
+    transition: .3s;
+}
+
+.content-card h3 {
+    margin-top: 0;
+    color: var(--liberty-red);
+}
+
+.content-card p {
+    margin-bottom: 0;
+}
+
+.content-card:hover,
+.content-card:focus-within {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+}
+
+/* BBQ SCENE */
+
 .bbq-scene {
     background: rgba(255, 255, 255, .92);
     padding: 2rem;
@@ -462,6 +583,22 @@ body {
     animation: tail-wag .45s infinite alternate;
 }
 
+.dog-bandana {
+    position: absolute;
+    right: -10px;
+    top: 18px;
+    width: 24px;
+    height: 18px;
+    background: repeating-linear-gradient(
+        to bottom,
+        var(--liberty-red) 0 5px,
+        white 5px 10px
+    );
+    border-left: 8px solid var(--patriot-blue);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    z-index: 2;
+}
+
 .fireflies span {
     position: absolute;
     width: 9px;
@@ -501,161 +638,7 @@ body {
     animation-delay: 2.6s;
 }
 
-@keyframes sun-pulse {
-    50% {
-        box-shadow: 0 0 55px var(--star-gold);
-        transform: scale(1.06);
-    }
-}
-
-@keyframes cloud-drift {
-    0% {
-        transform: translateX(-90px);
-    }
-
-    100% {
-        transform: translateX(180px);
-    }
-}
-
-@keyframes flag-sway {
-    50% {
-        transform: rotate(10deg);
-    }
-}
-
-@keyframes smoke-rise {
-    0% {
-        opacity: .8;
-        transform: translateY(0) translateX(0) scale(1);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(-125px) translateX(30px) scale(2.2);
-    }
-}
-
-@keyframes flame-flicker {
-    from {
-        transform: rotate(-45deg) scale(.9);
-    }
-
-    to {
-        transform: rotate(-45deg) scale(1.25);
-    }
-}
-
-@keyframes cup-wiggle {
-    50% {
-        transform: rotate(5deg);
-    }
-}
-
-@keyframes person-bounce {
-    50% {
-        transform: translateY(-6px);
-    }
-}
-
-@keyframes arm-wave {
-    0%, 100% {
-        transform: rotate(20deg);
-    }
-
-    50% {
-        transform: rotate(-75deg);
-    }
-}
-
-@keyframes dog-bounce {
-    50% {
-        transform: translateY(-7px);
-    }
-}
-
-@keyframes tail-wag {
-    from {
-        transform: rotate(-20deg);
-    }
-
-    to {
-        transform: rotate(25deg);
-    }
-}
-
-@keyframes firefly {
-    50% {
-        transform: translate(25px, -30px);
-        opacity: .35;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding: 1rem;
-    }
-
-    .bbq-yard {
-        min-height: 560px;
-    }
-
-    .grill {
-        left: 5%;
-        transform: scale(.85);
-    }
-
-    .picnic-table {
-        right: 4%;
-        width: 210px;
-    }
-
-    .person-one {
-        left: 35%;
-    }
-
-    .person-two {
-        left: 47%;
-    }
-
-    .dog {
-        right: 19%;
-    }
-}
-
-.page {
-    display: none;
-}
-
-#car-page {
-    display: block;
-}
-
-.page:target {
-    display: block;
-}
-
-body:has(#bbq-page:target) #car-page {
-    display: none;
-}
-
-.next-button {
-    display: inline-block;
-    margin-top: 1.5rem;
-    background: var(--liberty-red);
-    color: white;
-    text-decoration: none;
-    padding: .9rem 1.3rem;
-    border-radius: 10px;
-    font-weight: bold;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, .18);
-    transition: .3s;
-}
-
-.next-button:hover {
-    background: var(--patriot-blue);
-    transform: translateY(-4px);
-}
+/* ARRIVAL CAR SCENE */
 
 .car-scene {
     background: rgba(255, 255, 255, .92);
@@ -954,6 +937,369 @@ body:has(#bbq-page:target) #car-page {
     animation-delay: .8s;
 }
 
+/* GAMES AND FINALE SCENE */
+
+.games-scene h2 {
+    color: var(--patriot-blue);
+}
+
+.games-yard {
+    background: linear-gradient(#78c7ff 0 45%, #447c54 45% 100%);
+}
+
+.cornhole-board {
+    position: absolute;
+    left: 9%;
+    bottom: 65px;
+    width: 135px;
+    height: 190px;
+    background: linear-gradient(135deg, var(--liberty-red), #f06a6a);
+    border: 5px solid white;
+    border-radius: 12px;
+    transform: rotate(-10deg);
+    box-shadow: 0 10px 0 rgba(0, 0, 0, .25);
+}
+
+.cornhole-hole {
+    position: absolute;
+    top: 28px;
+    left: 43px;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    border-radius: 50%;
+    border: 4px solid var(--star-gold);
+}
+
+.beanbag {
+    position: absolute;
+    width: 28px;
+    height: 22px;
+    border-radius: 8px;
+    background: var(--patriot-blue);
+    border: 3px solid white;
+}
+
+.beanbag-one {
+    left: 75px;
+    top: 120px;
+    animation: beanbag-toss 2.2s infinite ease-in-out;
+}
+
+.beanbag-two {
+    left: 25px;
+    top: 145px;
+    background: var(--star-gold);
+}
+
+.horseshoe-game {
+    position: absolute;
+    left: 33%;
+    bottom: 75px;
+    width: 150px;
+    height: 130px;
+}
+
+.stake {
+    position: absolute;
+    left: 70px;
+    bottom: 0;
+    width: 8px;
+    height: 90px;
+    background: #7a4a24;
+    border-radius: 10px;
+}
+
+.horseshoe {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border: 8px solid #d9d9d9;
+    border-top-color: transparent;
+    border-radius: 50%;
+}
+
+.horseshoe-one {
+    left: 20px;
+    bottom: 18px;
+    transform: rotate(20deg);
+    animation: horseshoe-spin 2.4s infinite ease-in-out;
+}
+
+.horseshoe-two {
+    left: 92px;
+    bottom: 12px;
+    transform: rotate(-25deg);
+}
+
+.sprinkler {
+    position: absolute;
+    right: 33%;
+    bottom: 55px;
+    width: 130px;
+    height: 130px;
+}
+
+.sprinkler-base {
+    position: absolute;
+    left: 50px;
+    bottom: 0;
+    width: 35px;
+    height: 22px;
+    background: var(--patriot-blue);
+    border-radius: 8px 8px 3px 3px;
+}
+
+.water-stream {
+    position: absolute;
+    bottom: 18px;
+    left: 60px;
+    width: 8px;
+    height: 95px;
+    background: rgba(180, 235, 255, .8);
+    border-radius: 999px;
+    transform-origin: bottom;
+    animation: sprinkler-spray 1.2s infinite alternate ease-in-out;
+}
+
+.water-one {
+    transform: rotate(-55deg);
+}
+
+.water-two {
+    transform: rotate(-25deg);
+    animation-delay: .2s;
+}
+
+.water-three {
+    transform: rotate(25deg);
+    animation-delay: .4s;
+}
+
+.lawn-chair {
+    position: absolute;
+    bottom: 62px;
+    width: 90px;
+    height: 70px;
+    border-radius: 8px;
+    background: repeating-linear-gradient(
+        90deg,
+        var(--liberty-red) 0 12px,
+        white 12px 24px,
+        var(--patriot-blue) 24px 36px
+    );
+    border: 4px solid #333;
+    transform: skewX(-10deg);
+}
+
+.lawn-chair::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    bottom: -32px;
+    width: 8px;
+    height: 35px;
+    background: #333;
+    transform: rotate(20deg);
+}
+
+.lawn-chair::after {
+    content: "";
+    position: absolute;
+    right: 10px;
+    bottom: -32px;
+    width: 8px;
+    height: 35px;
+    background: #333;
+    transform: rotate(-20deg);
+}
+
+.chair-one {
+    right: 12%;
+}
+
+.chair-two {
+    right: 22%;
+    bottom: 48px;
+    transform: skewX(-10deg) scale(.85);
+}
+
+.sparkler {
+    position: absolute;
+    bottom: 95px;
+    width: 6px;
+    height: 65px;
+    background: #333;
+    border-radius: 999px;
+}
+
+.sparkler::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: -12px;
+    width: 30px;
+    height: 30px;
+    background: var(--star-gold);
+    border-radius: 50%;
+    box-shadow:
+        0 0 12px var(--star-gold),
+        18px 0 white,
+        -18px 0 white,
+        0 18px var(--liberty-red),
+        0 -18px var(--patriot-blue);
+    animation: sparkler-glow .7s infinite alternate;
+}
+
+.sparkler-one {
+    left: 50%;
+    transform: rotate(-16deg);
+}
+
+.sparkler-two {
+    left: 57%;
+    transform: rotate(14deg);
+    animation-delay: .3s;
+}
+
+.small-firework {
+    position: absolute;
+    top: 95px;
+    width: 12px;
+    height: 12px;
+    background: var(--star-gold);
+    border-radius: 50%;
+    box-shadow:
+        0 -30px var(--star-gold),
+        0 30px var(--liberty-red),
+        30px 0 white,
+        -30px 0 var(--patriot-blue),
+        22px 22px var(--star-gold),
+        -22px -22px var(--liberty-red),
+        22px -22px white,
+        -22px 22px var(--patriot-blue);
+    animation: small-firework-burst 1.8s infinite ease-in-out;
+}
+
+.firework-one {
+    left: 64%;
+}
+
+.firework-two {
+    left: 78%;
+    top: 135px;
+    animation-delay: .7s;
+}
+
+/* FOOTER */
+
+.site-footer {
+    max-width: 1100px;
+    margin: 1.5rem auto 0;
+    background: var(--patriot-blue);
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .15);
+}
+
+.site-footer p {
+    margin: .4rem 0;
+}
+
+/* ANIMATIONS */
+
+@keyframes sun-pulse {
+    50% {
+        box-shadow: 0 0 55px var(--star-gold);
+        transform: scale(1.06);
+    }
+}
+
+@keyframes cloud-drift {
+    0% {
+        transform: translateX(-90px);
+    }
+
+    100% {
+        transform: translateX(180px);
+    }
+}
+
+@keyframes flag-sway {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes smoke-rise {
+    0% {
+        opacity: .8;
+        transform: translateY(0) translateX(0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-125px) translateX(30px) scale(2.2);
+    }
+}
+
+@keyframes flame-flicker {
+    from {
+        transform: rotate(-45deg) scale(.9);
+    }
+
+    to {
+        transform: rotate(-45deg) scale(1.25);
+    }
+}
+
+@keyframes cup-wiggle {
+    50% {
+        transform: rotate(5deg);
+    }
+}
+
+@keyframes person-bounce {
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+@keyframes arm-wave {
+    0%, 100% {
+        transform: rotate(20deg);
+    }
+
+    50% {
+        transform: rotate(-75deg);
+    }
+}
+
+@keyframes dog-bounce {
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes tail-wag {
+    from {
+        transform: rotate(-20deg);
+    }
+
+    to {
+        transform: rotate(25deg);
+    }
+}
+
+@keyframes firefly {
+    50% {
+        transform: translate(25px, -30px);
+        opacity: .35;
+    }
+}
+
 @keyframes car-pull-up {
     0% {
         left: -260px;
@@ -974,12 +1320,6 @@ body:has(#bbq-page:target) #car-page {
     }
 }
 
-@keyframes road-move {
-    100% {
-        background-position: -110px 0;
-    }
-}
-
 @keyframes tree-sway {
     50% {
         transform: rotate(3deg);
@@ -995,5 +1335,192 @@ body:has(#bbq-page:target) #car-page {
 @keyframes balloon-float {
     50% {
         transform: translateY(-12px);
+    }
+}
+
+@keyframes beanbag-toss {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(25px, -70px) rotate(180deg);
+    }
+}
+
+@keyframes horseshoe-spin {
+    0%, 100% {
+        transform: translate(0, 0) rotate(20deg);
+    }
+
+    50% {
+        transform: translate(55px, -45px) rotate(220deg);
+    }
+}
+
+@keyframes sprinkler-spray {
+    from {
+        opacity: .45;
+        height: 65px;
+    }
+
+    to {
+        opacity: 1;
+        height: 110px;
+    }
+}
+
+@keyframes sparkler-glow {
+    from {
+        transform: scale(.75);
+        opacity: .55;
+    }
+
+    to {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes small-firework-burst {
+    0% {
+        transform: scale(.2);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition: none !important;
+    }
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .site-header {
+        align-items: flex-start;
+    }
+
+    .site-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .site-nav a {
+        text-align: center;
+    }
+
+    .content-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .bbq-yard {
+        min-height: 560px;
+    }
+
+    .driveway-scene {
+        min-height: 560px;
+    }
+
+    .grill {
+        left: 5%;
+        transform: scale(.85);
+    }
+
+    .picnic-table {
+        right: 4%;
+        width: 210px;
+    }
+
+    .person-one {
+        left: 35%;
+    }
+
+    .person-two {
+        left: 47%;
+    }
+
+    .dog {
+        right: 19%;
+    }
+
+    .house {
+        left: 30px;
+        transform: scale(.8);
+    }
+
+    .tree {
+        right: 40px;
+        transform: scale(.8);
+    }
+
+    .welcome-sign {
+        right: 160px;
+    }
+
+    .balloons {
+        right: 160px;
+    }
+
+    .car {
+        transform: scale(.8);
+    }
+
+    .games-yard {
+        min-height: 620px;
+    }
+
+    .cornhole-board {
+        left: 5%;
+        transform: rotate(-10deg) scale(.75);
+    }
+
+    .horseshoe-game {
+        left: 28%;
+        transform: scale(.8);
+    }
+
+    .sprinkler {
+        right: 18%;
+        transform: scale(.8);
+    }
+
+    .lawn-chair {
+        transform: skewX(-10deg) scale(.7);
+    }
+
+    .chair-one {
+        right: 4%;
+    }
+
+    .chair-two {
+        right: 18%;
+    }
+
+    .sparkler-one {
+        left: 43%;
+    }
+
+    .sparkler-two {
+        left: 54%;
     }
 }
